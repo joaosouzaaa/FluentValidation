@@ -24,8 +24,8 @@
 
   <ItemGroup>
     <Folder Include="ControllerTests\" />
-    <Folder Include="SettingsTests\ValidatorTests\" />
-    <Folder Include="ServiceTests\" />
+    <Folder Include="ExtensionsTests\" />
+    <Folder Include="ServicesTests\" />
   </ItemGroup>
 
   <ItemGroup>

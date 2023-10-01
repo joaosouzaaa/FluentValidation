@@ -9,4 +9,7 @@ public enum EMessage : ushort
 
     [Description("Field {0} allows {1} chars")]
     InvalidLength,
+
+    [Description("Field {0} is in the wrong format, it should be: {1}.")]
+    InvalidFormat
 }
