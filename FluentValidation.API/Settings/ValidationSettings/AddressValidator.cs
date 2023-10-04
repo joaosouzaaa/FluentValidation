@@ -22,7 +22,7 @@ public sealed class AddressValidator : AbstractValidator<Address>
 				.WithMessage(EMessage.InvalidLength.Description().FormatTo("Complement", "3 to 100"));
         });
 
-        RuleFor(a => a.Number).Length(3, 10)
+        RuleFor(a => a.Number).Length(1, 10)
             .WithMessage(a => string.IsNullOrEmpty(a.Number)
             ? EMessage.Required.Description().FormatTo("Number")
             : EMessage.InvalidLength.Description().FormatTo("Number", "3 to 10"));

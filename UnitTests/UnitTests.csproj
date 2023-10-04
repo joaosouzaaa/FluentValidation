@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FluentValidation.API\FluentValidation.API.csproj" />
+    <ProjectReference Include="..\TestBuilders\TestBuilders.csproj" />
   </ItemGroup>
 
 </Project>
