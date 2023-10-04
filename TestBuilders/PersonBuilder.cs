@@ -6,42 +6,58 @@ public sealed class PersonBuilder
 	private string _firstName = "first";
 	private string _lastName = "last";
 	private int _age = 123;
-	private DateTime _birthDate = new DateTime(2022, 01, 01);
+	private DateTime _birthDate = new DateTime(2001, 01, 01);
 	private string _email = "random@email.com";
 	private string _cpf = "19649020020";
+	private Address _address = AddressBuilder.NewObject().DomainBuild();
+	private List<Phone> _phoneList = new List<Phone>()
+    {
+        PhoneBuilder.NewObject().DomainBuild(),
+        PhoneBuilder.NewObject().DomainBuild(),
+        PhoneBuilder.NewObject().DomainBuild()
+    };
+	private List<Skill> _skillList = new List<Skill>()
+    {
+        SkillBuilder.NewObject().DomainBuild()
+    };
 
     public static PersonBuilder NewObject() =>
 		new PersonBuilder();
 
-	public Person DomainBuild()
-	{
-		var address = AddressBuilder.NewObject().DomainBuild();
-		
-		var phoneList = new List<Phone>()
-		{
-			PhoneBuilder.NewObject().DomainBuild(),
-			PhoneBuilder.NewObject().DomainBuild(),
-			PhoneBuilder.NewObject().DomainBuild()
-		};
-		
-		var skillList = new List<Skill>()
-		{
-			SkillBuilder.NewObject().DomainBuild()
-		};
-
-		return new Person()
+	public Person DomainBuild() =>
+		new Person()
 		{
 			Age = _age,
-			Address = address,
+			Address = _address,
 			BirthDate = _birthDate,
 			Cpf = _cpf,
 			Email = _email,
 			FirstName = _firstName,
 			LastName = _lastName,
-			Phones = phoneList,
-			Skills = skillList
+			Phones = _phoneList,
+			Skills = _skillList
 		};
+
+	public PersonBuilder WithAddress(Address address)
+	{
+		_address = address;
+
+		return this;
 	}
+
+	public PersonBuilder WithPhoneList(List<Phone> phoneList)
+	{
+		_phoneList = phoneList;
+
+		return this;
+	}
+
+	public PersonBuilder WithSkillList(List<Skill> skillList)
+	{
+		_skillList = skillList;
+
+        return this;
+    }
 
 	public PersonBuilder WithFirstName(string firstName)
 	{

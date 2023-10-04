@@ -14,5 +14,8 @@ public enum EMessage : ushort
     InvalidFormat,
 
     [Description("{0} has to be greater than {1}.")]
-    GreaterThan
+    GreaterThan,
+
+    [Description("{0} has to be less than {1}.")]
+    LessThan
 }
