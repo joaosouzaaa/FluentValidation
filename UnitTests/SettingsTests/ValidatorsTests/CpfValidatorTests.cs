@@ -9,9 +9,9 @@ public sealed class CpfValidatorTests
     [InlineData("45632504069")]
     [InlineData("80804091021")]
     [InlineData("00514934034")]
-    public void ValidateCpf_SuccessfulScenario_ReturnsTrue(string cpf)
+    public void ValidateCpf_SuccessfulScenario_ReturnsTrue(string cpfToValidate)
     {
-        var validateCpfResult = CpfValidator.ValidateCpf(cpf);
+        var validateCpfResult = CpfValidator.ValidateCpf(cpfToValidate);
 
         Assert.True(validateCpfResult);
     }
@@ -23,9 +23,9 @@ public sealed class CpfValidatorTests
     [InlineData("123912039")]
     [InlineData("123")]
     [InlineData("80904091021")]
-    public void ValidaCpf_CpfInvalid_ReturnsFalse(string cpf)
+    public void ValidaCpf_CpfInvalid_ReturnsFalse(string cpfToValidate)
     {
-        var validateCpfResult = CpfValidator.ValidateCpf(cpf);
+        var validateCpfResult = CpfValidator.ValidateCpf(cpfToValidate);
 
         Assert.False(validateCpfResult);
     }
