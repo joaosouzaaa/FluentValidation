@@ -1,7 +1,7 @@
 ﻿using FluentValidation.API.Entities;
 
 namespace TestBuilders;
-public class AddressBuilder
+public sealed class AddressBuilder
 {
 	private string _city = "random city";
 	private string? _complement = "randomComplement";
@@ -10,7 +10,8 @@ public class AddressBuilder
 	private string _street = "random";
 	private string _zipCode = "12345678";
 
-	public static AddressBuilder NewObject() => new AddressBuilder();
+	public static AddressBuilder NewObject() => 
+		new AddressBuilder();
 
 	public Address DomainBuild() =>
 		new Address()

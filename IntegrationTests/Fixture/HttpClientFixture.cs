@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
 
 namespace IntegrationTests.Fixture;
-public sealed class HttpClientFixture
+public abstract class HttpClientFixture
 {
     protected readonly HttpClient _httpClient;
 

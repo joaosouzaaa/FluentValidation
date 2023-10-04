@@ -1,3 +1,4 @@
+using FluentValidation.API.Constants.CorsConstants;
 using FluentValidation.API.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,9 +17,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors(PoliciesConstants.DefaultCorsPolicy);
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

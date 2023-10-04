@@ -4,8 +4,9 @@ public static class DependencyInjectionHandler
 {
     public static void AddDependencyInjectionHandler(this IServiceCollection services)
     {
+        services.AddCorsDependencyInjection();
         services.AddSettingsDependencyInjection();
-        services.AddFiltersDependencyInjection();
         services.AddServicesDependencyInjection();
+        services.AddFiltersDependencyInjection();
     }
 }

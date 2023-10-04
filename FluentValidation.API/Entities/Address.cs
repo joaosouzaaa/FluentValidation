@@ -2,7 +2,6 @@
 
 public sealed class Address
 {
-    public int Id { get; set; }
     public required string ZipCode { get; set; }
     public required string Street { get; set; }
     public string? Complement { get; set; }
