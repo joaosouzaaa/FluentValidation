@@ -6,7 +6,6 @@ namespace TestBuilders;
 public sealed class SkillBuilder
 {
 	private string _name = "name";
-	private ESkillCategory _skillCategory = new Faker().PickRandom<ESkillCategory>();
 	private int _experienceYears = 10;
 
 	public static SkillBuilder NewObject() =>
@@ -15,7 +14,7 @@ public sealed class SkillBuilder
 	public Skill DomainBuild() =>
 		new Skill()
 		{
-			Category = _skillCategory,
+			Category = new Faker().PickRandom<ESkillCategory>(),
 			ExperienceYears = _experienceYears,
 			Name = _name
 		};

@@ -27,13 +27,13 @@ public sealed class PersonValidator : AbstractValidator<Person>
 		RuleFor(p => p.Age).GreaterThan(0)
 			.WithMessage(EMessage.GreaterThan.Description().FormatTo("Age", "0"));
 
-		RuleFor(p => p.DateOfBirth).GreaterThan(DateTime.Now.AddYears(-18))
-			.WithMessage(EMessage.GreaterThan.Description().FormatTo("Date of birth", DateTime.Now.AddYears(-18).ToString()));
+		RuleFor(p => p.BirthDate).GreaterThan(DateTime.Now.AddYears(-18))
+			.WithMessage(EMessage.GreaterThan.Description().FormatTo("Birth Date", DateTime.Now.AddYears(-18).ToString()));
 
 		RuleFor(p => p.Email).EmailAddress()
 			.WithMessage(EMessage.InvalidFormat.Description().FormatTo("Email", "yourmail@yourprovider.com"));
 
-		RuleFor(p => CpfValidator.ValidateCpf(p.Cpf)).Equal(true)
-			.WithMessage(p => EMessage.InvalidFormat.Description().FormatTo("Cpf", "00000000000"));
+		RuleFor(p => p.Cpf).Must(CpfValidator.ValidateCpf)
+			.WithMessage(EMessage.InvalidFormat.Description().FormatTo("Cpf", "00000000000"));
     }
 }
