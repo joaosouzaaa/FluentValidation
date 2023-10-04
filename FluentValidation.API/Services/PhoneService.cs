@@ -13,5 +13,5 @@ public sealed class PhoneService : BaseService<Phone>, IPhoneService
     }
 
     public async Task<bool> ValidatePhoneAsync(Phone phone) =>
-        await ValidatePhoneAsync(phone);
+        await ValidateAsync(phone);
 }

@@ -8,4 +8,5 @@ public sealed class Address
     public required string Number { get; set; }
     public required string District { get; set; }
     public required string City { get; set; }
+    public required string State { get; set; }
 }

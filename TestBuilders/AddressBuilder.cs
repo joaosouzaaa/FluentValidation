@@ -9,6 +9,7 @@ public sealed class AddressBuilder
 	private string _number = "123";
 	private string _street = "random";
 	private string _zipCode = "12345678";
+	private string _state = "PR";
 
 	public static AddressBuilder NewObject() => 
 		new AddressBuilder();
@@ -21,7 +22,8 @@ public sealed class AddressBuilder
 			District = _district,
 			Number = _number,
 			Street = _street,
-			ZipCode = _zipCode
+			ZipCode = _zipCode,
+			State = _state
 		};
 
 	public AddressBuilder WithCity(string city)
@@ -62,6 +64,13 @@ public sealed class AddressBuilder
 	public AddressBuilder WithDistrict(string district)
 	{
 		_district = district;
+
+		return this;
+	}
+
+	public AddressBuilder WithState(string state)
+	{
+		_state = state;
 
 		return this;
 	}

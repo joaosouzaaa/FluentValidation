@@ -36,5 +36,10 @@ public sealed class AddressValidator : AbstractValidator<Address>
             .WithMessage(a => string.IsNullOrEmpty(a.City)
             ? EMessage.Required.Description().FormatTo("City")
             : EMessage.InvalidLength.Description().FormatTo("City", "3 to 100"));
+
+        RuleFor(a => a.State).Length(2)
+            .WithMessage(a => string.IsNullOrEmpty(a.State)
+            ? EMessage.Required.Description().FormatTo("State")
+            : EMessage.InvalidLength.Description().FormatTo("State", "2"));
     }
 }

@@ -14,18 +14,15 @@ public sealed class AddressController : ControllerBase
 	public AddressController(IAddressService addressService)
 	{
 		_addressService = addressService;
-	}
+    }
 
-    /*
-	{
-  "zipCode": "82624196",
-  "street": "aaaaaaaaaa",
-  "complement": "aaaaa",
-  "number": "aaaaaa",
-  "district": "aaaaaaa",
-  "city": "aaaaaaa"
-}
-	 */
+    /// <summary>
+    /// Validate the address.
+    /// </summary>
+    /// <param name="address">The address request. Use default value:{"zipCode":"51260060","street":"Rua Irakitan","complement":"house 3","number":"123","district":"Jordão","city":"Recife", "state": "PE"}</param>
+    /// <returns>If the address is valid.</returns>
+    /// <response code="200">Validation was successful.</response>
+    /// <response code="400">Validation happen with errors.</response>
     [HttpPost(AddressRouteConstants.ValidateAddress)]
 	[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(bool))]
 	[ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(List<Notification>))]

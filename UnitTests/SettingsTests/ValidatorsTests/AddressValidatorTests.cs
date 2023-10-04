@@ -95,6 +95,22 @@ public sealed class AddressValidatorTests
         Assert.False(validationResult.IsValid);
     }
 
+    [Theory]
+    [InlineData("a")]
+    [InlineData("aaaa")]
+    [InlineData("")]
+    public async Task ValidateAddressAsync_InvalidState_ReturnsFalse(string state)
+    {
+        // A
+        var addressWithInvalidState = AddressBuilder.NewObject().WithState(state).DomainBuild();
+
+        // A
+        var validationResult = await _addressValidator.ValidateAsync(addressWithInvalidState);
+
+        // A
+        Assert.False(validationResult.IsValid);
+    }
+
     public static IEnumerable<object[]> Invalid3To100StringLengthParameters()
     {
         yield return new object[]
