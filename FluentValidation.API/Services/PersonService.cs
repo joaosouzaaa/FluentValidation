@@ -14,7 +14,7 @@ public sealed class PersonService : BaseService<Person>, IPersonService
 
     public async Task<bool> ValidatePersonAsync(Person person)
     {
-        if (await ValidateAsync(person))
+        if (!await ValidateAsync(person))
             return false;
 
         // call repository of perform other action

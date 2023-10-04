@@ -39,7 +39,7 @@ public sealed class AddressServiceTests
     }
 
     [Fact]
-    public async Task ValidateAddressAsync_AddressInvalid_AddsNotification_ReturnsFalse()
+    public async Task ValidateAddressAsync_InvalidAddress_AddsNotification_ReturnsFalse()
     {
         // A
         var address = AddressBuilder.NewObject().DomainBuild();
