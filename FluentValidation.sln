@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentValidation.API", "Flu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{7C3ADEDB-A1A8-43F3-9C92-B69C19AB8EC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBuilders", "TestBuilders\TestBuilders.csproj", "{B3905D26-C93D-473E-8BF0-E53D0064F102}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBuilders", "TestBuilders\TestBuilders.csproj", "{B3905D26-C93D-473E-8BF0-E53D0064F102}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{94A0E43D-1326-4D04-9C55-5BE67BD9B45F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{B3905D26-C93D-473E-8BF0-E53D0064F102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3905D26-C93D-473E-8BF0-E53D0064F102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3905D26-C93D-473E-8BF0-E53D0064F102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94A0E43D-1326-4D04-9C55-5BE67BD9B45F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A0E43D-1326-4D04-9C55-5BE67BD9B45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A0E43D-1326-4D04-9C55-5BE67BD9B45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A0E43D-1326-4D04-9C55-5BE67BD9B45F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

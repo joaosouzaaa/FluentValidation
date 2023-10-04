@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  fluentvalidation.api:
+    image: ${DOCKER_REGISTRY-}fluentvalidationapi
+    container_name: fluentvalidation-api
+    build:
+      context: .
+      dockerfile: FluentValidation.API/Dockerfile
+    ports:
+      - "5019:80"
+      - "7097:443"
